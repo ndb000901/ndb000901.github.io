@@ -1,0 +1,378 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>wuhen&#39;s blog • Posts by &#34;linux&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2021-05-07T19:50:11.588Z</updated>
+    <category term="计算机网络" />
+    <category term="C#" />
+    <category term="C" />
+    <category term="软件安装" />
+    <category term="linux" />
+    <category term="php" />
+    <category term="Java" />
+    <category term="python" />
+    <category term="shell" />
+    <category term="博客搭建" />
+    <category term="git" />
+    <entry>
+        <id>http://example.com/2021/05/08/Ubuntu%20Centos%E9%9D%99%E6%80%81ip%E8%AE%BE%E7%BD%AE/</id>
+        <title>Ubuntu Centos静态ip设置</title>
+        <link rel="alternate" href="http://example.com/2021/05/08/Ubuntu%20Centos%E9%9D%99%E6%80%81ip%E8%AE%BE%E7%BD%AE/"/>
+        <content type="html">&lt;h2 id=&#34;ubuntu-centos静态ip设置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ubuntu-centos静态ip设置&#34;&gt;#&lt;/a&gt; Ubuntu Centos 静态 ip 设置&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.VMware16.0.0&lt;/p&gt;
+&lt;p&gt;2.Ubuntu16.04(&lt;a href=&#34;https://blog.csdn.net/qq_43938052/article/details/107326122&#34;&gt;安装教程&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;3.Centos8&lt;/p&gt;
+&lt;p&gt;4.VMware 网络模式：NAT&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;2. 配置 VMnet8&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;打开 PowerShell，执行命令，查看虚拟网卡是否安装。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ipconfig&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806401-50899a00-90a9-11eb-8d6d-fe3fe95e6a56.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;VMnet8 用于 NAT 模式。&lt;/p&gt;
+&lt;p&gt;若无上图两块虚拟网卡，请打开 VMware，虚拟网络编辑器，还原默认设置。（需要管理员权限）若有上图虚拟网卡，自行跳过这一步。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806452-5c755c00-90a9-11eb-8162-eead8e9da02d.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806472-61d2a680-90a9-11eb-9e6b-c5e56dc17b80.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;打开控制面板，右击 VMnet8 属性。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806533-72831c80-90a9-11eb-9c04-9bc00b6f1df4.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击属性&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806555-7a42c100-90a9-11eb-9871-434094e59edc.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;配置&lt;/p&gt;
+&lt;p&gt;IP 地址你也可以自定义。&lt;/p&gt;
+&lt;p&gt;比如 IP 地址你定义为 192.168.146.1，那么你的网关的前 3 段要一样 192.168.146&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;你可以翻阅一下有关子网掩码、网络地址和主机地址等知识&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806602-8af33700-90a9-11eb-9a1a-d53cb9c36600.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下来开始配置 VMware。因为需要配置静态 ip，所以要将本地 DHCP 服务给取消了。配置子网 IP，子网掩码。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806621-93e40880-90a9-11eb-92bb-e1befd18276e.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;填写网关，要与前面的配置一致&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806666-9e9e9d80-90a9-11eb-8e4d-aa03a1153681.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;一路保存。开启 ubuntu，centOS 开始配置。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.ubuntu 配置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，查看网络信息。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ifconfig&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806701-a9593280-90a9-11eb-8963-96a61554876d.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们需要给 ens33 配置一个静态 ip，执行命令，开始配置。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim &amp;#x2F;etc&amp;#x2F;network&amp;#x2F;interfaces&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;配置内容如下&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iface ens33 inet static 静态 ip（static，原来是 dhcp）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;address ip 地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;netmask 子网掩码&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;gateway 网关&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# This file describes the network interfaces available on your system&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# and how to activate them. For more information, see interfaces(5).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;source &amp;#x2F;etc&amp;#x2F;network&amp;#x2F;interfaces.d&amp;#x2F;*&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# The loopback network interface&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;auto lo&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;iface lo inet loopback&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;auto ens33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;iface ens33 inet static&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;address 192.168.146.104&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;netmask 255.255.255.0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;gateway 192.168.146.2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806845-cee63c00-90a9-11eb-834a-b7c7d09d546b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;保存。&lt;br&gt;
+执行命令，配置 DNS 服务器&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim &amp;#x2F;etc&amp;#x2F;resolvconf&amp;#x2F;resolv.conf.d&amp;#x2F;base&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806903-ddccee80-90a9-11eb-9d87-be913a49d4d0.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;保存。&lt;br&gt;
+重启一下机子就好&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;reboot&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806945-e9b8b080-90a9-11eb-9fd5-399cb283cee2.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;成功。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.CentOS 配置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，查看网络&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ifconfig&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112806992-f5a47280-90a9-11eb-94d8-62c9e99b9b34.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;需要配置 ens33。&lt;/p&gt;
+&lt;p&gt;执行命令，开始配置。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim &amp;#x2F;etc&amp;#x2F;sysconfig&amp;#x2F;network-scripts&amp;#x2F;ifcfg-ens33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;填写以下内容&lt;/p&gt;
+&lt;p&gt;BOOTPROTO 填 static&lt;/p&gt;
+&lt;p&gt;IPADDR 填你要设定的 IP&lt;/p&gt;
+&lt;p&gt;GATEWAY 填写网关&lt;/p&gt;
+&lt;p&gt;NETMASK 填写子网掩码&lt;/p&gt;
+&lt;p&gt;DNS1 填写 DNS 服务器地址，填网关就好&lt;/p&gt;
+&lt;p&gt;ONBOOT 填 yes&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;TYPE&amp;#x3D;Ethernet&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;PROXY_METHOD&amp;#x3D;none&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;BROWSER_ONLY&amp;#x3D;no&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;BOOTPROTO&amp;#x3D;static&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;DEFROUTE&amp;#x3D;yes&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IPADDR&amp;#x3D;192.168.146.129&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;GATEWAY&amp;#x3D;192.168.146.2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;NETMASK&amp;#x3D;255.255.255.0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;DNS1&amp;#x3D;192.168.146.2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IPV4_FAILURE_FATAL&amp;#x3D;no&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IPV6INIT&amp;#x3D;yes&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IPV6_AUTOCONF&amp;#x3D;yes&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IPV6_DEFROUTE&amp;#x3D;yes&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IPV6_FAILURE_FATAL&amp;#x3D;no&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;IPV6_ADDR_GEN_MODE&amp;#x3D;stable-privacy&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;NAME&amp;#x3D;ens33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;UUID&amp;#x3D;152a6305-70b6-4b63-b7b9-6b9c52c0c752&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;DEVICE&amp;#x3D;ens33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ONBOOT&amp;#x3D;yes&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112807052-094fd900-90aa-11eb-9118-e6f536826313.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，配置 resolv.conf，填写你的网关就好。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim &amp;#x2F;etc&amp;#x2F;resolv.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112807085-140a6e00-90aa-11eb-96a7-a41e56d042d2.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;重启机子&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;reboot&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;今天的文章就肝到这里了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者 info&lt;/p&gt;
+&lt;p&gt;作者：DebugWuhen&lt;/p&gt;
+&lt;p&gt;原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。&lt;/p&gt;
+&lt;p&gt;转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="linux" />
+        <updated>2021-05-07T19:50:11.588Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2021/05/08/linux%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8U%E7%9B%98%E7%AD%89%E5%A4%96%E6%8E%A5%E5%82%A8%E5%AD%98%E8%AE%BE%E5%A4%87/</id>
+        <title>linux如何使用U盘等外接储存设备</title>
+        <link rel="alternate" href="http://example.com/2021/05/08/linux%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8U%E7%9B%98%E7%AD%89%E5%A4%96%E6%8E%A5%E5%82%A8%E5%AD%98%E8%AE%BE%E5%A4%87/"/>
+        <content type="html">&lt;h2 id=&#34;linux如何使用u盘等外接储存设备&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux如何使用u盘等外接储存设备&#34;&gt;#&lt;/a&gt; linux 如何使用 U 盘等外接储存设备&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. 插入 U 盘&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 查看&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;lsblk #查看所有块设备&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112807530-998e1e00-90aa-11eb-8b0e-0e651fc77158.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我的是 256MB 的 U 盘，就是如图所示的 sdb 设备了，mountpoint 为空，因为还没有挂载哩。&lt;/p&gt;
+&lt;p&gt;sdb 对应的路径因该是 /dev/sdb 喽（你可以用 fdisk -l 查看一下）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112807573-a6ab0d00-90aa-11eb-9fdc-02cbb7416da4.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;3. 挂载&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;mkdir &amp;#x2F;mnt&amp;#x2F;usb   #新建一个目录，用来挂载U盘&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;mount &amp;#x2F;dev&amp;#x2F;sdb &amp;#x2F;mnt&amp;#x2F;usb   #把U盘挂载到&amp;#x2F;mnt&amp;#x2F;usb&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;lsblk  #查看一下&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112807622-b1fe3880-90aa-11eb-8226-0a118879eaac.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;sdb 的 mountpoint 不在为空，而是刚才的挂载点 /mnt/usb&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;恭喜！！！可以在 /mnt/usb 下浏览 U 盘内容了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.umount&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;用完后，先执行&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;umount &amp;#x2F;dev&amp;#x2F;sdb &amp;#x2F;mnt&amp;#x2F;usb #先卸载&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;lsblk #查看一下&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112807668-be829100-90aa-11eb-9871-ad9701482d38.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;mountpoint 又变为空了。but 你用 fdisk -l 查看（显示 U 盘还在），这时你需要关闭驱动器。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112807710-c9d5bc80-90aa-11eb-9751-0796823896f9.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. 安全关闭驱动器&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;udisksctl power-off -b &amp;#x2F;dev&amp;#x2F;sdb				#安全关闭驱动器&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fdisk -l #查看&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这下 U 盘没了（弹出了）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112807759-d823d880-90aa-11eb-9f70-fe4bd9aaeafd.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：如果提示&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;The program &amp;#39;udisksctl&amp;#39; is currently not installed. You can install it by typing:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;apt install udisks2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;安装 udisks2 再试&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;apt install udisks2 #安装udisks2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;6. 拔掉 U 盘&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者 info&lt;/p&gt;
+&lt;p&gt;作者：DebugWuhen&lt;/p&gt;
+&lt;p&gt;原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。&lt;/p&gt;
+&lt;p&gt;转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="linux" />
+        <updated>2021-05-07T19:50:11.588Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2021/05/08/ubuntu20%E9%85%8D%E7%BD%AEip/</id>
+        <title>ubuntu20配置ip</title>
+        <link rel="alternate" href="http://example.com/2021/05/08/ubuntu20%E9%85%8D%E7%BD%AEip/"/>
+        <content type="html">&lt;h2 id=&#34;ubuntu20配置ip&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ubuntu20配置ip&#34;&gt;#&lt;/a&gt; ubuntu20 配置 ip&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.ubuntu20&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;2. 配置 ip&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;打开终端，修改以下文件，文件名可能不一致，请灵活处理。&lt;/p&gt;
+&lt;p&gt;ens33 取决自己的实际情况。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim &amp;#x2F;etc&amp;#x2F;netplan&amp;#x2F;01-network-manager-all.yaml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# Let NetworkManager manage all devices on this system&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;network:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  version: 2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  #renderer: NetworkManager&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  ethernets:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ens33:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      addresses: [192.168.146.200&amp;#x2F;24]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      dhcp4: no&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      dhcp6: no&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      gateway4: 192.168.146.2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      nameservers:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        addresses: [192.168.146.2,8.8.8.8]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;注意：冒号后需空格，每一级缩进严格&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，配置 ip&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;netplan apply&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;查看 ip&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ip addr&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112807945-0b666780-90ab-11eb-9563-6c283ab86900.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;测试网络连通性&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ping baidu.com&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112807968-13260c00-90ab-11eb-8a48-4163cf661a88.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者 info&lt;/p&gt;
+&lt;p&gt;作者：DebugWuhen&lt;/p&gt;
+&lt;p&gt;原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。&lt;/p&gt;
+&lt;p&gt;转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="linux" />
+        <updated>2021-05-07T19:50:11.588Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2021/05/08/ubuntu%E5%BF%98%E8%AE%B0%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%8E%E5%AF%86%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+        <title>ubuntu忘记用户名与密码解决方案</title>
+        <link rel="alternate" href="http://example.com/2021/05/08/ubuntu%E5%BF%98%E8%AE%B0%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%8E%E5%AF%86%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+        <content type="html">&lt;h2 id=&#34;ubuntu忘记用户名与密码解决方案&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ubuntu忘记用户名与密码解决方案&#34;&gt;#&lt;/a&gt; ubuntu 忘记用户名与密码解决方案&lt;/h2&gt;
+&lt;p&gt;很多朋友经常忘记自己的用户名以及密码。为啥哩，因为他们装好了系统后就没用过，放在电脑里吃灰，等到要用的时候，发现记不得用户名及密码了。哎呀，不小心说漏了，sorry，sorry。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 环境&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.VMware15.5.6&lt;/p&gt;
+&lt;p&gt;2.ubuntu16.04&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;2. 解决方案&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;开启 ubuntu 虚拟机时长按 esc 键（&lt;strong&gt;注意：你的鼠标要聚焦到虚拟机哦，否则你的 esc 键是作用到物理机的。&lt;/strong&gt;），选择如图选项，回车。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112808137-42d51400-90ab-11eb-939e-d6495f337c06.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择第二个选项，按 e 键编辑。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112808162-49fc2200-90ab-11eb-882a-b9d6fa2a7eb8.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;找到 linux 下一行，从最后面的 nomodeset 开始回删，删到 root 那。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112808192-53858a00-90ab-11eb-8445-75c37a9d01b0.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后添加 rw single init=/bin/bash，按 F10 或者 ctrl + x&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112808235-5c765b80-90ab-11eb-8c2e-a82ad4b3e80b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;瞧，我们进入系统了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112808267-64360000-90ab-11eb-96e2-f0cfb8b1d3b4.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，查看下用户名。我的用户名是 wuhen3。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cat &amp;#x2F;etc&amp;#x2F;shadow&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112808311-6f892b80-90ab-11eb-97aa-5cd9e0d74467.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，修改密码。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;passwd 用户名&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;注意：如果你的密码修改没成功，可能是你用了”1234“这种弱密码，试着在密码中添加个字母试试。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112808349-7adc5700-90ab-11eb-8306-6b6ca36d7f33.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;重启你的系统。登录试试。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112808372-82036500-90ab-11eb-9329-af7c00bdeb95.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;成功。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112808431-8b8ccd00-90ab-11eb-95c1-71593e49e91d.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者 info&lt;/p&gt;
+&lt;p&gt;作者：DebugWuhen&lt;/p&gt;
+&lt;p&gt;原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。&lt;/p&gt;
+&lt;p&gt;转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="linux" />
+        <updated>2021-05-07T19:50:11.588Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2021/05/08/ubuntu16.04%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</id>
+        <title>ubuntu16.04安装步骤</title>
+        <link rel="alternate" href="http://example.com/2021/05/08/ubuntu16.04%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+        <content type="html">&lt;h2 id=&#34;ubuntu1604安装步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ubuntu1604安装步骤&#34;&gt;#&lt;/a&gt; &lt;strong&gt;ubuntu16.04 安装步骤&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;过几天要写一个搭建博客的教程，所以准备工作还是要先搞一下。windows 与 linux 的教程应该都会出，但为了更好的性能与稳定度，我还是强烈建议用 linux 环境搭建博客。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.&lt;a href=&#34;http://releases.ubuntu.com/16.04.6/ubuntu-16.04.6-server-amd64.iso&#34;&gt;ubuntu16.04 镜像&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.VMware 15.5.6&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;2. 安装步骤&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752354-4ada7880-9005-11eb-9aa3-f98f8fed18de.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;创建新的虚拟机&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752362-50d05980-9005-11eb-8b8b-0b889a1ad108.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752377-5cbc1b80-9005-11eb-8805-fa2412a78a23.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752391-65145680-9005-11eb-8718-603fa64600a0.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择稍后安装操作系统，点击下一步。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752409-7198af00-9005-11eb-9079-010aadb7aed5.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择 linux ubuntu 64 位，点击下一步。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752420-7e1d0780-9005-11eb-99cb-27efc828f64b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;名称与位置各位大爷随意，点击下一步。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752436-8e34e700-9005-11eb-944f-be31380d5ebb.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;内核数自己填就好（注意总数不要超过宿主机 CPU 核心数）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752443-98ef7c00-9005-11eb-9053-f8bcf841bb57.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;内存按照自己需求配置（这个内存只是设定了该虚拟机最大可使用内存，而不是立马就占用了系统资源）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752491-ecfa6080-9005-11eb-8b51-1ba07046bff3.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752493-f388d800-9005-11eb-8299-0e59b57d77e0.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752505-fdaad680-9005-11eb-908a-514618baec72.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752517-07343e80-9006-11eb-8598-343d2cfc46f1.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752529-0f8c7980-9006-11eb-9dcc-32f2d1f5fd37.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击浏览，选择路径（路径随意）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752535-1ca96880-9006-11eb-966b-c1e0abe89d02.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击自定义硬件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752543-24690d00-9006-11eb-8a57-2f39cd232bb3.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择之前下载的镜像，点击关闭，然后点击完成。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752550-2e8b0b80-9006-11eb-908a-e15e2eb5f4e6.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击开启虚拟机。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752556-35b21980-9006-11eb-919c-4065d5472e2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;语言选择 English，回车。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752561-3cd92780-9006-11eb-85f1-f525c9ba98d0.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;回车&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752572-45c9f900-9006-11eb-9b97-b34e228955fd.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择 English，回车。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752580-51b5bb00-9006-11eb-8cc3-cea8cad8284b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这是要选择国家，先选 other，回车。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752593-5bd7b980-9006-11eb-9755-f089389b7011.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择 Asia (亚洲)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752597-62663100-9006-11eb-9435-e7741c7b7f4f.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择 China (中国)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752608-6b570280-9006-11eb-867d-60e01042f683.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;回车&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752615-75790100-9006-11eb-929d-c71e08fc5a1c.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;不检测键盘（用英文键盘就好），回车。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752620-7dd13c00-9006-11eb-89d1-aedfb1e4db93.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;回车&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752628-86c20d80-9006-11eb-95c9-0990729f4ed2.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;等待&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752634-8e81b200-9006-11eb-9fb5-8fd8889f8c3d.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置主机名（各位大爷随意）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752650-980b1a00-9006-11eb-8cb3-c4fdabc8b666.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;用户名（各位大爷随意）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752662-a6f1cc80-9006-11eb-9ec8-455ba097eefc.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置账号（各位大爷随意，登录时用）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752666-aeb17100-9006-11eb-88a1-f5f97176dc72.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置密码（随意，但是一定要记住哦）要输两次&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752676-ba9d3300-9006-11eb-84da-1988fe85cf0c.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;是否选择弱密码，选择 yes, 回车。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752683-c4bf3180-9006-11eb-8512-d07da8646670.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;等待&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752688-cbe63f80-9006-11eb-8b68-25ad04792a9c.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;你的时区是否是重庆，选择 yes。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752691-d3a5e400-9006-11eb-8aff-d6c8a5cd3c7a.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;回车就好&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752694-db658880-9006-11eb-8328-cab1d7a89c51.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;回车&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752706-e1f40000-9006-11eb-9d21-59468a83211f.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择 yes&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752715-eb7d6800-9006-11eb-9e1d-684a7b9f7fad.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;回车&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752720-f33d0c80-9006-11eb-91b7-081ce15d1d03.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择 yes&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752728-fa641a80-9006-11eb-9093-6cf229e8ca6a.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;等待&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752739-018b2880-9007-11eb-8759-55af4fb11e43.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置 http 代理，没有就直接回车喽&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752746-0c45bd80-9007-11eb-8469-79437aa6b203.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752751-15cf2580-9007-11eb-8deb-395fd62662a9.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这一步等待时间有点长，（可以点回车试试，能否跳过）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752760-1cf63380-9007-11eb-9dd9-4f76e01ba28d.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择不自动更新系统&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752763-241d4180-9007-11eb-883c-5fcbb5141e93.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;注意：openSSH server 一定要选择（点空格可选中），&lt;br&gt;
+LAMP(linux + apache + mysql + php)，&lt;br&gt;
+Virtual Machine host 不要选，本来就是虚拟机（在虚拟机上搞虚拟肯定有问题噻）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752773-34cdb780-9007-11eb-8974-23096e4cae8e.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;等待&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752787-4adb7800-9007-11eb-8502-2c0fa03ca05d.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置 mysql root 密码（一定要记住哦）要输两次&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752792-5169ef80-9007-11eb-8f99-75f63ead5766.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;回车&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752800-59299400-9007-11eb-849c-ea5e13deb230.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;回车&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752810-60e93880-9007-11eb-894a-b8447e42e85e.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;装好了。输入用户名，密码登录。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752813-69417380-9007-11eb-9848-6bd0f54d46e1.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;注意：在 Linux 上输入密码时，是不回显的（屏幕没啥反应），如果输错了直接回车，重新输就好。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 连接服务器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由于虚拟机显示的命令行看起来有些恼火，so 我给各位大爷找了个工具 MobaXterm【公众号回复 shell 即可获得】（来源于互联网）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752835-7eb69d80-9007-11eb-8350-f11724fe9822.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击左上角 session。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752837-85ddab80-9007-11eb-9685-4c1b689ef3d7.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击 SSH&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752843-8c6c2300-9007-11eb-8006-65d9c2018b1c.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在虚拟机输入命令 ifconfig，查看 ip。我的 ip 为 192.168.190.132&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752847-942bc780-9007-11eb-83b6-2bd1b12551b7.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;填写 ip 与用户名，点击 OK。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752852-9aba3f00-9007-11eb-9939-b6b3adb27fc0.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;输入密码。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752859-a3127a00-9007-11eb-8b55-6e723d654dbd.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;sudo su 切换为 root ($ 是普通用户，# 是 root 用户)&lt;/p&gt;
+&lt;p&gt;输入命令 vim /etc/apt/sources.list (换个国内源，提升安装软件的速度)，把原来的删喽或者用 #注释了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;vim 的简单使用请自行上网查询，谢谢&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;deb http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb-src http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial-updates main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb-src http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial-updates main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial universe&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb-src http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial universe&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial-updates universe&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb-src http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial-updates universe&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial-security main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb-src http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial-security main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial-security universe&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;deb-src http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;ubuntu&amp;#x2F; xenial-security universe&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752876-b32a5980-9007-11eb-9c1c-69b0fa8902b5.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752887-c0dfdf00-9007-11eb-87de-90775281b905.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行 apt-get update (更新一下)。&lt;/p&gt;
+&lt;p&gt;OK，今天的文章就肝到这里。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者 info&lt;/p&gt;
+&lt;p&gt;作者：DebugWuhen&lt;/p&gt;
+&lt;p&gt;原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。&lt;/p&gt;
+&lt;p&gt;转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="linux" />
+        <updated>2021-05-07T19:50:11.578Z</updated>
+    </entry>
+</feed>

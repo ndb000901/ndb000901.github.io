@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>wuhen&#39;s blog • Posts by &#34;软件安装&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
+        <lastBuildDate>Sat, 08 May 2021 03:50:11 +0800</lastBuildDate>
+        <category>计算机网络</category>
+        <category>C#</category>
+        <category>C</category>
+        <category>软件安装</category>
+        <category>linux</category>
+        <category>php</category>
+        <category>Java</category>
+        <category>python</category>
+        <category>shell</category>
+        <category>博客搭建</category>
+        <category>git</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/05/08/JDK%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/</guid>
+            <title>ubuntu安装教程</title>
+            <link>http://example.com/2021/05/08/JDK%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/</link>
+            <category>软件安装</category>
+            <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;ubuntu安装教程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ubuntu安装教程&#34;&gt;#&lt;/a&gt; ubuntu 安装教程&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.ubuntu16.04(&lt;a href=&#34;https://blog.csdn.net/qq_43938052/article/details/107326122&#34;&gt;安装教程&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;2.jdk-14.0.1(&lt;a href=&#34;https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html&#34;&gt;下载地址&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我下载的是这个&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761285-2b574600-902d-11eb-8c61-80046f0993f3.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;2. 解压&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;将 jdk 下载到 /usr/local/java&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cd &amp;#x2F;usr&amp;#x2F;local&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;mkdir java&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cd java&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;tar -zxvf jdk-14.0.1_linux-x64_bin.tar.gz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761292-33af8100-902d-11eb-8bc7-942f4b552936.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;解压后会出现一个 jdk-14.0.1 文件夹。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 配置 JDK 环境变量&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;vim /etc/profile&lt;br&gt;
+ 加入以下内容&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;JAVA_HOME&amp;#x3D;&amp;#x2F;usr&amp;#x2F;local&amp;#x2F;java&amp;#x2F;jdk-14.0.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;CLASSPATH&amp;#x3D;$JAVA_HOME&amp;#x2F;lib&amp;#x2F;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;PATH&amp;#x3D;$PATH:$JAVA_HOME&amp;#x2F;bin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;export PATH JAVA_HOME CLASSPATH&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;刷新一下&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;source &amp;#x2F;etc&amp;#x2F;profile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;验证一下&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;java -version&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761299-3dd17f80-902d-11eb-9ceb-9a1b73fc5dc9.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;nice，安装成功！！！！&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;windows&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#windows&#34;&gt;#&lt;/a&gt; windows&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.win10&lt;/p&gt;
+&lt;p&gt;2.jdk-14.0.1(&lt;a href=&#34;https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html&#34;&gt;下载地址&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761312-47f37e00-902d-11eb-8866-d9b45813b336.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;由于是图形化安装，就不写详细过程了，&lt;strong&gt;注意记住安装路径&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 配置环境&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;右键此电脑，点击属性。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761323-5b064e00-902d-11eb-80fb-86d99c396aa3.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击高级系统设置&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761335-69ed0080-902d-11eb-808c-5e4f2bd30525.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击环境变量&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761339-71140e80-902d-11eb-8795-2873793c1837.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;JAVA_HOME（值填写 jdk 安装路径）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761344-78d3b300-902d-11eb-8c07-08287a5b2bcf.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CLASSPATH&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在 PATH 里添加&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;%JAVA_HOME%\bin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;%JAVA_HOME%\jre\bin&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761354-85580b80-902d-11eb-8de3-02f663233d35.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;一路保存&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 验证&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;java -version&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761368-8f7a0a00-902d-11eb-96ee-9af33f3ab53e.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;nice，成功了！！！！！！&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者 info&lt;/p&gt;
+&lt;p&gt;作者：DebugWuhen&lt;/p&gt;
+&lt;p&gt;原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。&lt;/p&gt;
+&lt;p&gt;转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/05/08/maven%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/</guid>
+            <title>安装Maven</title>
+            <link>http://example.com/2021/05/08/maven%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/</link>
+            <category>软件安装</category>
+            <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;strong&gt;安装 Maven&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，切换到 opt 目录&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cd &amp;#x2F;opt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;执行命令，创建 maven 文件夹&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;mkdir maven&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761392-b0daf600-902d-11eb-8376-bff1016396db.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，切换到 maven 目录，下载 maven-3.6.3，解压压缩包&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cd maven&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wget http:&amp;#x2F;&amp;#x2F;www.trieuvan.com&amp;#x2F;apache&amp;#x2F;maven&amp;#x2F;maven-3&amp;#x2F;3.6.3&amp;#x2F;binaries&amp;#x2F;apache-maven-3.6.3-bin.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;tar zxvf apache-maven-3.6.3-bin.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;换源 (在&lt;mirrors&gt;&lt;/mirrors&gt;标签中添加 mirror 子节点：)，提升下载速度。(这里用阿里源)&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim apache-maven-3.6.3&amp;#x2F;conf&amp;#x2F;settings.xml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;mirror&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;lt;id&amp;gt;aliyunmaven&amp;lt;&amp;#x2F;id&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;lt;mirrorOf&amp;gt;*&amp;lt;&amp;#x2F;mirrorOf&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;lt;name&amp;gt;阿里云公共仓库&amp;lt;&amp;#x2F;name&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;lt;url&amp;gt;https:&amp;#x2F;&amp;#x2F;maven.aliyun.com&amp;#x2F;repository&amp;#x2F;public&amp;lt;&amp;#x2F;url&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;&amp;#x2F;mirror&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761402-bc2e2180-902d-11eb-93ba-b030b8b8cad8.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;配置环境变量&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim &amp;#x2F;etc&amp;#x2F;profile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;粘贴以下内容，保存 profile&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;export MAVEN_HOME&amp;#x3D;&amp;#x2F;opt&amp;#x2F;maven&amp;#x2F;apache-maven-3.6.3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;export PATH&amp;#x3D;$MAVEN_HOME&amp;#x2F;bin:$PATH&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761407-c6502000-902d-11eb-8025-4e89d8357ded.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;刷新环境变量。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;source &amp;#x2F;etc&amp;#x2F;profile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;检查一下，下图所示，成功。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;mvn -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761414-ccde9780-902d-11eb-8ee7-c5a13e56af2d.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者 info&lt;/p&gt;
+&lt;p&gt;作者：DebugWuhen&lt;/p&gt;
+&lt;p&gt;原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。&lt;/p&gt;
+&lt;p&gt;转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/05/08/nginx%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/</guid>
+            <title>nginx安装手册</title>
+            <link>http://example.com/2021/05/08/nginx%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/</link>
+            <category>软件安装</category>
+            <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;nginx安装手册&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nginx安装手册&#34;&gt;#&lt;/a&gt; nginx 安装手册&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.manjaro-gnome21&lt;/p&gt;
+&lt;p&gt;2.nginx-1.19.10 &lt;a href=&#34;https://nginx.org/en/download.html&#34;&gt;下载界面&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;2. 安装&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在 /usr/local 创建 nginx 目录&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cd &amp;#x2F;usr&amp;#x2F;local&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;mkdir nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cd nginx&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;下载 nginx，解压，进入 nginx-1.19.10, 执行命令编译。生成的可执行文件在上级目录 sbin。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;wget https:&amp;#x2F;&amp;#x2F;nginx.org&amp;#x2F;download&amp;#x2F;nginx-1.19.10.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;tar -zxvf nginx-1.19.10.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cd nginx-1.19.10&amp;#x2F; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;.&amp;#x2F;configure&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;make &amp;amp;&amp;amp; make install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;3.nginx 使用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;启动&lt;/p&gt;
+&lt;p&gt;启动后，打开浏览器查看 127.0.0.1&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;成功界面&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/115152209-c1b5df00-a0a2-11eb-8564-e73258255bdd.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#x2F;usr&amp;#x2F;local&amp;#x2F;nginx&amp;#x2F;sbin&amp;#x2F;nginx&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;停止&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#x2F;usr&amp;#x2F;local&amp;#x2F;nginx&amp;#x2F;sbin&amp;#x2F;nginx -s stop&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;修改配置文件后重启&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#x2F;usr&amp;#x2F;local&amp;#x2F;nginx&amp;#x2F;sbin&amp;#x2F;nginx -s reload&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;4. 配置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;配置文件位置&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#x2F;usr&amp;#x2F;local&amp;#x2F;nginx&amp;#x2F;conf&amp;#x2F;nginx.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;配置虚拟主机&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        listen       80;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        server_name  mysite.haha;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        location &amp;#x2F; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            root   html&amp;#x2F;mysite;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            index  index.html index.htm;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;修改 /etc/hosts&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;127.0.0.1 mysite.haha&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者 info&lt;/p&gt;
+&lt;p&gt;作者：DebugWuhen&lt;/p&gt;
+&lt;p&gt;原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。&lt;/p&gt;
+&lt;p&gt;转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/05/08/node.js%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/</guid>
+            <title>安装node.js</title>
+            <link>http://example.com/2021/05/08/node.js%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/</link>
+            <category>软件安装</category>
+            <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;strong&gt;安装 node.js&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，切换目录，创建文件夹&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cd &amp;#x2F;usr&amp;#x2F;local&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;mkdir node&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cd node&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;下载（&lt;strong&gt;&lt;a href=&#34;https://nodejs.org/dist/v12.18.2/node-v12.18.2-linux-x64.tar.xz&#34;&gt;https://nodejs.org/dist/v12.18.2/node-v12.18.2-linux-x64.tar.xz&lt;/a&gt;&lt;/strong&gt;）&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;wget https:&amp;#x2F;&amp;#x2F;nodejs.org&amp;#x2F;dist&amp;#x2F;v12.18.2&amp;#x2F;node-v12.18.2-linux-x64.tar.xz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;解压&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tar xJvf node-v12.18.2-linux-x64.tar.xz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;配置，修改～/.bash_profile 文件，加入以下内容&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim ~&amp;#x2F;.bash_profile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# Nodejs&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;export PATH&amp;#x3D;&amp;#x2F;usr&amp;#x2F;local&amp;#x2F;node&amp;#x2F;node-v12.16.3-linux-x64&amp;#x2F;bin:$PATH&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761437-eda6ed00-902d-11eb-8e66-0235f5664a42.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;更新环境变量&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;source ~&amp;#x2F;.bash_profile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;检验&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;node -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761441-f4cdfb00-902d-11eb-9320-36c17e9a7108.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npx -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761445-fb5c7280-902d-11eb-83b1-bc91561602c1.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm version&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761451-031c1700-902e-11eb-8a58-6f684723d87b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;成功了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;换源&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;NPM 下载速度不太友好，执行命令，安装 CNPM。淘宝有个 NPM 的镜像源 CNPM，速度可以。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install -g cnpm --registry&amp;#x3D;https:&amp;#x2F;&amp;#x2F;registry.npm.taobao.org&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;查看一下是否安装成功&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cnpm -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761470-10d19c80-902e-11eb-8fa8-2b7870780b97.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者 info&lt;/p&gt;
+&lt;p&gt;作者：DebugWuhen&lt;/p&gt;
+&lt;p&gt;原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。&lt;/p&gt;
+&lt;p&gt;转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/05/08/redis%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/</guid>
+            <title>redis安装手册</title>
+            <link>http://example.com/2021/05/08/redis%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/</link>
+            <category>软件安装</category>
+            <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;windows安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#windows安装&#34;&gt;#&lt;/a&gt; Windows 安装&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.win10&lt;/p&gt;
+&lt;p&gt;2.redis-5.0.9(&lt;a href=&#34;https://github.com/tporadowski/redis/releases/download/v5.0.9/Redis-x64-5.0.9.zip&#34;&gt;资源地址&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;2. 安装验证&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载之后解压。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761507-378fd300-902e-11eb-9736-31c06c5cbb42.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;打开 PowerShell，切换到该目录。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761514-3f4f7780-902e-11eb-8cd9-457f4810bb89.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，开启服务端&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;.\redis-server.exe&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761526-46768580-902e-11eb-9948-ad241f2b404a.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;服务端启动成功。&lt;br&gt;
+再打开一个 PowerShell 窗口，切换到该目录，执行命令启动客户端&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;.\redis-cli.exe&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;验证一下&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761536-4ecec080-902e-11eb-87c4-08e38694cf07.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;ubuntu安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ubuntu安装&#34;&gt;#&lt;/a&gt; ubuntu 安装&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.ubuntu16.04(&lt;a href=&#34;https://blog.csdn.net/qq_43938052/article/details/107326122&#34;&gt;安装教程&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;2.gcc 5.4.0&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装：apt install gcc&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3.make 4.1&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装 apt install make&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;4.redis-6.0.8(&lt;a href=&#34;http://download.redis.io/releases/redis-6.0.8.tar.gz&#34;&gt;下载地址&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;2. 安装步骤&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;先切换到 root 权限。&lt;/p&gt;
+&lt;p&gt;切换路径&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cd &amp;#x2F;usr&amp;#x2F;local&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;新建 redis 目录&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;mkdir redis&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;下载&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cd mkdir &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wget http:&amp;#x2F;&amp;#x2F;download.redis.io&amp;#x2F;releases&amp;#x2F;redis-6.0.8.tar.gz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;解压&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tar xzvf redis-6.0.8.tar.gz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761560-6dcd5280-902e-11eb-9ef5-534895213fea.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;编译&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：执行 make 命令前要装好 gcc、make&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cd redis-6.0.8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;make&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;编译成功后，src 目录下将生成 redis-server、redis-cli&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761570-7756ba80-902e-11eb-8edd-c9bc29c1dd55.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 验证&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;执行命令，启动服务端&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;.&amp;#x2F;redis-server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761577-82a9e600-902e-11eb-8e55-a70250ee4d82.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;成功&lt;/p&gt;
+&lt;p&gt;再打开一个终端窗口，执行命令，启动客户端。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;.\redis-cli&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761587-8c334e00-902e-11eb-9d84-59ad30f14722.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. 设置远程连接&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;用 windows 的 redis-cli 连接虚拟机 ubuntu 的 redis。&lt;/p&gt;
+&lt;p&gt;在 Ubuntu 中 Ctrl+c 先关掉已经运行的 redis-server。&lt;/p&gt;
+&lt;p&gt;写个 redis 的配置文件&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim &amp;#x2F;etc&amp;#x2F;redis&amp;#x2F;redis.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#若无该&amp;#x2F;etc&amp;#x2F;redis目录，可以创建一个，当然你也可以自定义。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;写入以下内容，保存。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;bind 0.0.0.0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;启动 redis 服务端&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cd &amp;#x2F;usr&amp;#x2F;local&amp;#x2F;redis&amp;#x2F;redis-6.0.8&amp;#x2F;src&amp;#x2F;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;.&amp;#x2F;redis-server &amp;#x2F;etc&amp;#x2F;redis&amp;#x2F;redis.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761604-9b1a0080-902e-11eb-8251-82a3e0e47ea9.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在 windows 打开 PowerShell，切换到 redis-cli 目录，执行命令。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;.\redis-cli.exe -h 192.168.146.104 -p 6379&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;-p 为端口，在服务端可以自定义。&lt;/p&gt;
+&lt;p&gt;验证&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112761613-a2410e80-902e-11eb-8bc2-205d8af0c38c.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;今天的文章到此结束。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者 info&lt;/p&gt;
+&lt;p&gt;作者：DebugWuhen&lt;/p&gt;
+&lt;p&gt;原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。&lt;/p&gt;
+&lt;p&gt;转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>shell脚本编写 - wuhen&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="wuhen&#039;s blog"><meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/favicon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="wuhen&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="# shell 脚本编写 # 一些语法基础 1. 如何定义一个变量 变量名由字母、数字、下划线组成，不可以数字开头，不可使用保留关键字。 等号左右不可有空格。 1haha&amp;#x3D;&amp;quot;jiji&amp;quot; 使用变量：在变量名前加上 $ 1echo $haha"><meta property="og:type" content="blog"><meta property="og:title" content="wuhen"><meta property="og:url" content="https://ndb000901.github.io/"><meta property="og:site_name" content="wuhen&#039;s blog"><meta property="og:description" content="# shell 脚本编写 # 一些语法基础 1. 如何定义一个变量 变量名由字母、数字、下划线组成，不可以数字开头，不可使用保留关键字。 等号左右不可有空格。 1haha&amp;#x3D;&amp;quot;jiji&amp;quot; 使用变量：在变量名前加上 $ 1echo $haha"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://avatars.githubusercontent.com/u/48900845?v=4"><meta property="article:published_time" content="2021-05-07T19:50:11.588Z"><meta property="article:modified_time" content="2021-05-07T19:50:11.588Z"><meta property="article:author" content="wuhen"><meta property="article:tag" content="shell"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://avatars.githubusercontent.com/u/48900845?v=4"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/05/08/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/"},"headline":"wuhen's blog","image":["https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png"],"datePublished":"2021-05-07T19:50:11.588Z","dateModified":"2021-05-07T19:50:11.588Z","author":{"@type":"Person","name":"wuhen"},"description":"# shell 脚本编写 # 一些语法基础 1. 如何定义一个变量 变量名由字母、数字、下划线组成，不可以数字开头，不可使用保留关键字。 等号左右不可有空格。 1haha&#x3D;&quot;jiji&quot; 使用变量：在变量名前加上 $ 1echo $haha"}</script><link rel="canonical" href="http://example.com/2021/05/08/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/favicon.png"><meta name="referrer" content="no-referrer-when-downgrade"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/live2d/waifu.css"><script type="text/javascript" async src="/live2d/autoload.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://user-images.githubusercontent.com/48900845/117486777-a7359e00-af9c-11eb-870c-8812471aa8fa.png" alt="wuhen&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ndb000901"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><!--!--><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2021-05-08  <a class="commentCountImg" href="/2021/05/08/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/#comment-container"><span class="display-none-class">20517d2e467c2bc2879fe4b37615d0e5</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="20517d2e467c2bc2879fe4b37615d0e5">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>7 分钟  <i class="fas fa-pencil-alt"> </i>1.1 k</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">shell脚本编写</h1><div class="content"><h1 id="shell脚本编写"><a class="markdownIt-Anchor" href="#shell脚本编写">#</a> shell 脚本编写</h1>
+<h2 id="一些语法基础"><a class="markdownIt-Anchor" href="#一些语法基础">#</a> 一些语法基础</h2>
+<p><strong>1. 如何定义一个变量</strong></p>
+<p>变量名由字母、数字、下划线组成，不可以数字开头，不可使用保留关键字。</p>
+<p>等号左右不可有空格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">haha&#x3D;&quot;jiji&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>使用变量：在变量名前加上 $</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $haha</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p><strong>可以在变量外加上‘{}’</strong></p>
+<p>其实加与不加都可以，加花括号可以帮助解释器更好地识别变量边界。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;hello world $&#123;haha&#125;&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>readonly 只读变量</strong></p>
+<p>readonly 关键字修饰的变量不可修改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readonly haha&#x3D;&quot;jiji&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>数组</strong></p>
+<p><strong>定义</strong></p>
+<p>数组内可有不同类型数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">myArray&#x3D;(1 2 ‘kkk’ 4)</span><br><span class="line"></span><br><span class="line"># 或者(下标可以不连续，无限制)</span><br><span class="line"></span><br><span class="line">myArray[0]&#x3D;10</span><br><span class="line">myArray[0]&#x3D;11</span><br><span class="line">myArray[0]&#x3D;12</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>读取数组内容</strong></p>
+<p><strong>通过索引</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">myArray&#x3D;(1 2 &#39;jiji&#39; 4)</span><br><span class="line">echo $&#123;myArray[0]&#125;</span><br><span class="line">echo $&#123;myArray[1]&#125;</span><br><span class="line">echo $&#123;myArray[2]&#125;</span><br><span class="line">echo $&#123;myArray[3]&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>输出结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">jiji</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<p><strong>获取所有元素</strong></p>
+<p>使用 @、* 获取。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myArray&#x3D;(1 2 &#39;jiji&#39; 4)</span><br><span class="line">echo $&#123;myArray[@]&#125;</span><br><span class="line">echo $&#123;myArray[*]&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>输出结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 2 jiji 4</span><br><span class="line">1 2 jiji 4</span><br></pre></td></tr></table></figure>
+<p><strong>获取数组长度</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myArray&#x3D;(1 2 &#39;jiji&#39; 4)</span><br><span class="line">echo $&#123;#myArray[@]&#125;</span><br><span class="line">echo $&#123;#myArray[*]&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>输出结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<p><strong>2. 流程控制</strong></p>
+<p><strong>if-else</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if [ 1 &#x3D;&#x3D; 1 ]</span><br><span class="line">then</span><br><span class="line">    echo &quot;OK&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p><strong>多个 if-else</strong></p>
+<p><strong>注意：</strong></p>
+<p>判断条件’[]' 与变量要有空格</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">a&#x3D;1</span><br><span class="line">b&#x3D;2</span><br><span class="line"></span><br><span class="line">if [ $a &#x3D;&#x3D; $b ]</span><br><span class="line">then</span><br><span class="line">    echo &quot;a等于b&quot;</span><br><span class="line">elif [ $a -gt $b ]</span><br><span class="line">then</span><br><span class="line">    echo &quot;a大于b&quot;</span><br><span class="line">elif [ $a -lt $b ]</span><br><span class="line">then</span><br><span class="line">    echo &quot;a小于b&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p><strong>for 循环</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in 1 2 3 4</span><br><span class="line">do</span><br><span class="line">    echo $i</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p><strong>输出结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<p><strong>while 循环</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int&#x3D;1</span><br><span class="line">while (( $int&lt;5 ))</span><br><span class="line">do</span><br><span class="line">    echo $int</span><br><span class="line">    let &quot;int++&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p><strong>输出结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<p><strong>case</strong></p>
+<p>若无匹配项，则执行 *。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;请输入一个数：&quot;</span><br><span class="line">read num</span><br><span class="line">case $num in</span><br><span class="line">    1)</span><br><span class="line">        echo &quot;1&quot;</span><br><span class="line">    ;;</span><br><span class="line">    2)</span><br><span class="line">        echo &quot;2&quot;</span><br><span class="line">    ;;</span><br><span class="line">    3) </span><br><span class="line">        echo &quot;3&quot;</span><br><span class="line">    ;;</span><br><span class="line">    4) </span><br><span class="line">        echo &quot;4&quot;</span><br><span class="line">    ;;</span><br><span class="line">    *)</span><br><span class="line">        echo &quot;other&quot;</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<p><strong>输出结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 输入2</span><br><span class="line">请输入一个数：</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line"></span><br><span class="line"># 输入 11</span><br><span class="line"></span><br><span class="line">请输入一个数：</span><br><span class="line">11</span><br><span class="line">other</span><br></pre></td></tr></table></figure>
+<p><strong>无限循环</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">while :</span><br><span class="line">do</span><br><span class="line">    echo &quot;hello,world&quot;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">while true</span><br><span class="line">do</span><br><span class="line">    echo &quot;hello,world&quot;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">for((;;));do</span><br><span class="line">echo &quot;jiji&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p><strong>until</strong></p>
+<p><strong>int 等于 3 时停止</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int&#x3D;1</span><br><span class="line">until (($int&#x3D;&#x3D;3))</span><br><span class="line">do</span><br><span class="line">    echo &quot;$int&quot;</span><br><span class="line">    let &quot;int++&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p><strong>break</strong></p>
+<p>跳出循环</p>
+<p><strong>continue</strong></p>
+<p>跳出本次循环</p>
+<p><strong>3. 传递参数</strong></p>
+<p>通常在执行脚本时，会为脚本传递一些参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;$0&quot;</span><br><span class="line">echo &quot;$1&quot;</span><br><span class="line">echo &quot;$2&quot;</span><br><span class="line">echo &quot;$3&quot;</span><br><span class="line">echo &quot;$4&quot;</span><br><span class="line"></span><br><span class="line">echo &quot;传递参数的个数：$#&quot;</span><br><span class="line">echo &quot;当前id:$$&quot;</span><br><span class="line">echo &quot;$*&quot;</span><br><span class="line">echo &quot;$@&quot;</span><br><span class="line">echo &quot;最后一个id：$!&quot;</span><br><span class="line">echo &quot;退出状态：$?&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>执行命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;hello.sh a b c d</span><br></pre></td></tr></table></figure>
+<p><strong>输出结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;hello.sh</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">d</span><br><span class="line">传递参数的个数：4</span><br><span class="line">当前id:15412</span><br><span class="line">a b c d</span><br><span class="line">a b c d</span><br><span class="line">最后一个id：</span><br><span class="line">退出状态：0</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$0</td>
+<td>脚本名</td>
+</tr>
+<tr>
+<td>$n</td>
+<td>第 n 个参数</td>
+</tr>
+<tr>
+<td>$#</td>
+<td>传递参数的个数</td>
+</tr>
+<tr>
+<td>$!</td>
+<td>后台最后一个进程 id</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>当前进程 id</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>退出状态码</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>单字符串，所有参数</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>多字符串，所有参数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4. 函数定义</strong></p>
+<p><strong>无参数函数定义：可以不写 function 关键字，return 后跟 0~255 作为返回值</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function f1()</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;haha&quot;</span><br><span class="line">    return 0</span><br><span class="line">&#125;</span><br><span class="line">f1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>有参数的函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function f2()</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;$0&quot;</span><br><span class="line">    echo &quot;$1&quot;</span><br><span class="line">    echo &quot;$2&quot;</span><br><span class="line">    echo &quot;$3&quot;</span><br><span class="line">    echo &quot;$4&quot;</span><br><span class="line">&#125;</span><br><span class="line">f2 1 2 3 4</span><br></pre></td></tr></table></figure>
+<p><strong>显示结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;hello.sh</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<p><strong>5. 运算符</strong></p>
+<p><strong>算数运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>加</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余</td>
+</tr>
+<tr>
+<td>=</td>
+<td>赋值</td>
+</tr>
+<tr>
+<td>==</td>
+<td>比较是否相等，相等返回 true</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不相等，返回 true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关系运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-eq</td>
+<td>左值等于右值，返回 true</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>左值不等于右值，返回 true</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>左值大于右值，返回 true</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>左值小于右值，返回 true</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>左值大于等于右值，返回 true</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>左值小于等于右值，返回 true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>字符串运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>字符串相等，返回 true</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>字符串不相等，返回 true</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>长度为 0, 返回 true</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>长度不为 0, 返回 true</td>
+</tr>
+<tr>
+<td>$</td>
+<td>是否为空，不为空返回 true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>逻辑运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td>逻辑 And</td>
+</tr>
+<tr>
+<td>||</td>
+<td>逻辑 Or</td>
+</tr>
+</tbody>
+</table>
+<p><strong>布尔运算</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!</td>
+<td>非运算</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>或运算</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>与运算</td>
+</tr>
+</tbody>
+</table>
+<p><strong>文件测试符</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-b file</td>
+<td>块设备，返回 true</td>
+</tr>
+<tr>
+<td>-c file</td>
+<td>字符设备，返回 true</td>
+</tr>
+<tr>
+<td>-d file</td>
+<td>目录，返回 true</td>
+</tr>
+<tr>
+<td>-g file</td>
+<td>设置 SGID 位，返回 true</td>
+</tr>
+<tr>
+<td>-k file</td>
+<td>设置粘着位 (Sticky Bit)，返回 true</td>
+</tr>
+<tr>
+<td>-r file</td>
+<td>可读，返回 true</td>
+</tr>
+<tr>
+<td>-w file</td>
+<td>可写，返回 true</td>
+</tr>
+<tr>
+<td>-x file</td>
+<td>可执行，返回 true</td>
+</tr>
+<tr>
+<td>-e file</td>
+<td>存在，返回 true</td>
+</tr>
+<tr>
+<td>-s file</td>
+<td>文件不为空，返回 true</td>
+</tr>
+<tr>
+<td>-p file</td>
+<td>有名管道，返回 true</td>
+</tr>
+<tr>
+<td>-u file</td>
+<td>设置 SUID，返回 true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：</strong></p>
+<p>SUID–&gt;Set User ID</p>
+<p>SGID–&gt;Set Group ID</p>
+<p><strong>6. 文件包含</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 方法1 &#39;.&#39;与文件名间空格不可以忘哦</span><br><span class="line">. filename</span><br><span class="line"></span><br><span class="line"># 方法2 </span><br><span class="line">source filename</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>作者 info</p>
+<p>作者：DebugWuhen</p>
+<p>原创公众号：『DebugWuhen』，专注于记录有趣的编程技术和有益的程序人生，期待你的关注。</p>
+<p>转载说明：务必注明来源（注明：来源于公众号：DebugWuhen， 作者：DebugWuhen）</p>
+<p><img src="https://user-images.githubusercontent.com/48900845/112752163-3b0e6480-9004-11eb-899d-66ddef749c2b.png" alt="image"></p>
+</blockquote>
+</div><div class="article-licensing box"><div class="licensing-title"><p>shell脚本编写</p><p><a href="http://example.com/2021/05/08/shell脚本编写/">http://example.com/2021/05/08/shell脚本编写/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><a href="http://example.com"><p>wuhen</p></a></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-05-08</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-05-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="recommend-area"><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 相关文章</span><br><span>  1.<a class="is-size-6" href="/2021/05/08/Burp%20suite%20%E5%88%86%E6%9E%90%20HTTP%E5%8D%8F%E8%AE%AE/" target="_blank">Burp suite 分析 HTTP协议</a><br></span><span>  2.<a class="is-size-6" href="/2021/05/08/JDK%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/" target="_blank">ubuntu安装教程</a><br></span><span>  3.<a class="is-size-6" href="/2021/05/08/Ubuntu%20Centos%E9%9D%99%E6%80%81ip%E8%AE%BE%E7%BD%AE/" target="_blank">Ubuntu Centos静态ip设置</a><br></span><span>  4.<a class="is-size-6" href="/2021/05/08/VS%20Code%20%E7%94%A8php%20%E8%BF%9E%E6%8E%A5sql%20server%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_blank">php 连接sql server数据库</a><br></span><span>  5.<a class="is-size-6" href="/2021/05/08/VS%20code%20php%20%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95/" target="_blank">VS code php 如何调试</a><br></span><span>  6.<a class="is-size-6" href="/2021/05/08/ensp%E4%BB%BF%E7%9C%9F/" target="_blank">ensp仿真</a><br></span><span>  7.<a class="is-size-6" href="/2021/05/08/java%E5%A4%84%E7%90%86json%E6%96%87%E4%BB%B6%E2%80%94%E2%80%94gson/" target="_blank">java处理json文件——gson</a><br></span><span>  8.<a class="is-size-6" href="/2021/05/08/java%E8%A7%A3%E6%9E%90html%E6%96%87%E4%BB%B6%E2%80%94%E2%80%94Jsoup/" target="_blank">java解析html文件——Jsoup</a><br></span></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://user-images.githubusercontent.com/48900845/117494329-c1747980-afa6-11eb-979e-716aa22bff7b.png" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://user-images.githubusercontent.com/48900845/117494301-b6b9e480-afa6-11eb-9be7-6a952e3d406d.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/05/08/redis%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">redis安装手册</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/05/08/ubuntu20%E9%85%8D%E7%BD%AEip/"><span class="level-item">ubuntu20配置ip</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--><div class="card"><div class="card-content"><div class="title is-5">评论</div><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.6.0/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
+            var gitalk = new Gitalk({
+            language:'zh-CN',
+            id: '20517d2e467c2bc2879fe4b37615d0e5',
+            repo: 'blog_comment',
+            owner: 'ndb000901',
+            clientID: '77b8725bd5fc0f68aafa',
+            clientSecret: '06920b6c955fbb5940f8b0575de237d53c721f80',
+            admin: ["ndb000901"],
+            createIssueManually: true,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: 'last',
+            proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/48900845?v=4" alt="wuhen"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">wuhen</p><p class="is-size-6 is-block">一个自由思想的神经病</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>阿拉斯加</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ndb000901" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ndb000901"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Weibo" href="/"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wuhen0901@qq.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Next" href="https://github.com/ndb000901/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://blog.csdn.net/qq_43938052" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">CSDN</span></span><span class="level-right"><span class="level-item tag">blog.csdn.net</span></span></a></li><li><a class="level is-mobile" href="https://github.com/ndb000901" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟缓存...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-07T19:50:11.588Z">2021-05-08</time></p><p class="title"><a href="/2021/05/08/Burp%20suite%20%E5%88%86%E6%9E%90%20HTTP%E5%8D%8F%E8%AE%AE/">Burp suite 分析 HTTP协议</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-07T19:50:11.588Z">2021-05-08</time></p><p class="title"><a href="/2021/05/08/JDK%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C/">ubuntu安装教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-07T19:50:11.588Z">2021-05-08</time></p><p class="title"><a href="/2021/05/08/Ubuntu%20Centos%E9%9D%99%E6%80%81ip%E8%AE%BE%E7%BD%AE/">Ubuntu Centos静态ip设置</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-07T19:50:11.588Z">2021-05-08</time></p><p class="title"><a href="/2021/05/08/VS%20Code%20%E7%94%A8php%20%E8%BF%9E%E6%8E%A5sql%20server%E6%95%B0%E6%8D%AE%E5%BA%93/">php 连接sql server数据库</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-07T19:50:11.588Z">2021-05-08</time></p><p class="title"><a href="/2021/05/08/VS%20code%20php%20%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95/">VS code php 如何调试</a></p></div></article></div></div><!--!--><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">46</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="tag">计算机网络</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag is-grey-lightest">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/linux/"><span class="tag">linux</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"><span class="tag">软件安装</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C</span><span class="tag is-grey-lightest">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"><span class="tag">博客搭建</span><span class="tag is-grey-lightest">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/php/"><span class="tag">php</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C#</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/shell/"><span class="tag">shell</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><!--!--><div class="column-right-shadow is-hidden-widescreen"></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://user-images.githubusercontent.com/48900845/117486777-a7359e00-af9c-11eb-870c-8812471aa8fa.png" alt="wuhen&#039;s blog" height="28"></a><p class="size-small"><span>&copy; 2021 wuhen</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a> &amp; <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">Amazing</a> <br><span>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br />&nbsp;&nbsp;&nbsp;&nbsp;方便于网友与自己学习交流，如有侵权，请<a href="/message" target="_blank">留言</a>，立即处理]<br /></span><span><span id="statistic-times">loading...</span><script>function createTime(time) {
+            var n = new Date(time);
+            now.setTime(now.getTime() + 250),
+                days = (now - n) / 1e3 / 60 / 60 / 24,
+                dnum = Math.floor(days),
+                hours = (now - n) / 1e3 / 60 / 60 - 24 * dnum,
+                hnum = Math.floor(hours),
+            1 == String(hnum).length && (hnum = "0" + hnum),
+                minutes = (now - n) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
+                mnum = Math.floor(minutes),
+            1 == String(mnum).length && (mnum = "0" + mnum),
+                seconds = (now - n) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
+                snum = Math.round(seconds),
+            1 == String(snum).length && (snum = "0" + snum),
+                document.getElementById("statistic-times").innerHTML = "❤️本站自 <strong>"+time.split(" ")[0].replace(/\//g,".")+"</strong> 已运行 <strong>" + dnum + "</strong> 天 <strong>" + hnum + "</strong> 小时 <strong>" + mnum + "</strong> 分 <strong>" + snum + "</strong> 秒！❤️";
+        }var now = new Date();setInterval("createTime('2021/05/05 00:00:00')", 250,"");</script><br></span><div class="size-small"><span>❤️感谢 <strong><span id="busuanzi_value_site_uv">99+</span></strong> 小伙伴的 <strong><span id="busuanzi_value_site_pv">99+</span></strong> 次光临！❤️</span></div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/removeif/hexo-theme-amazing"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.8/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('77b8725bd5fc0f68aafa','06920b6c955fbb5940f8b0575de237d53c721f80','ndb000901','blog_comment',false);})</script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
+            elements: "a",//代表点击链接就更新
+            selectors: [  //代表要更新的节点
+                ".section",
+                "title"
+            ],
+            cache: true,
+            cacheBust:false
+        })
+
+        function loadBusuanzi(){
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
+        }
+
+        function loadMathJax() { //加载mathjax
+            $.getScript("//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML", function () {
+                MathJax.Hub.Config({ tex2jax: { inlineMath: [['$', '$'], ['\(', '\)']] } });
+                var math = document.getElementsByClassName("entry-content")[0];
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, math]);
+            });
+        };
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', function () {
+        });
+        
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', function () {
+            $(".section").css({opacity:1});
+            if(true){
+                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('77b8725bd5fc0f68aafa','06920b6c955fbb5940f8b0575de237d53c721f80','ndb000901','blog_comment',false);});
+            }
+            if(false){
+                loadMathJax();
+            }
+            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
+            loadBackTop();
+            loadBusuanzi();
+            if(typeof loadBanner == 'function'){
+                loadBanner();
+            }
+        });</script></body></html>
