@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://blog.wuhen.one</id>
     <title>wuhen&#39;s blog • Posts by &#34;shell&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://blog.wuhen.one" />
     <updated>2021-05-07T19:50:11.588Z</updated>
     <category term="计算机网络" />
     <category term="C#" />
@@ -16,9 +16,9 @@
     <category term="博客搭建" />
     <category term="git" />
     <entry>
-        <id>http://example.com/2021/05/08/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/</id>
+        <id>https://blog.wuhen.one/2021/05/08/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/</id>
         <title>shell脚本编写</title>
-        <link rel="alternate" href="http://example.com/2021/05/08/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/"/>
+        <link rel="alternate" href="https://blog.wuhen.one/2021/05/08/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/"/>
         <content type="html">&lt;h1 id=&#34;shell脚本编写&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#shell脚本编写&#34;&gt;#&lt;/a&gt; shell 脚本编写&lt;/h1&gt;
 &lt;h2 id=&#34;一些语法基础&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一些语法基础&#34;&gt;#&lt;/a&gt; 一些语法基础&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;1. 如何定义一个变量&lt;/strong&gt;&lt;/p&gt;

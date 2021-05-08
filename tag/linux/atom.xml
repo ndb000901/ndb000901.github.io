@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://blog.wuhen.one</id>
     <title>wuhen&#39;s blog • Posts by &#34;linux&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://blog.wuhen.one" />
     <updated>2021-05-07T19:50:11.588Z</updated>
     <category term="计算机网络" />
     <category term="C#" />
@@ -16,9 +16,9 @@
     <category term="博客搭建" />
     <category term="git" />
     <entry>
-        <id>http://example.com/2021/05/08/Ubuntu%20Centos%E9%9D%99%E6%80%81ip%E8%AE%BE%E7%BD%AE/</id>
+        <id>https://blog.wuhen.one/2021/05/08/Ubuntu%20Centos%E9%9D%99%E6%80%81ip%E8%AE%BE%E7%BD%AE/</id>
         <title>Ubuntu Centos静态ip设置</title>
-        <link rel="alternate" href="http://example.com/2021/05/08/Ubuntu%20Centos%E9%9D%99%E6%80%81ip%E8%AE%BE%E7%BD%AE/"/>
+        <link rel="alternate" href="https://blog.wuhen.one/2021/05/08/Ubuntu%20Centos%E9%9D%99%E6%80%81ip%E8%AE%BE%E7%BD%AE/"/>
         <content type="html">&lt;h2 id=&#34;ubuntu-centos静态ip设置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ubuntu-centos静态ip设置&#34;&gt;#&lt;/a&gt; Ubuntu Centos 静态 ip 设置&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -106,9 +106,9 @@
         <updated>2021-05-07T19:50:11.588Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/05/08/linux%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8U%E7%9B%98%E7%AD%89%E5%A4%96%E6%8E%A5%E5%82%A8%E5%AD%98%E8%AE%BE%E5%A4%87/</id>
+        <id>https://blog.wuhen.one/2021/05/08/linux%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8U%E7%9B%98%E7%AD%89%E5%A4%96%E6%8E%A5%E5%82%A8%E5%AD%98%E8%AE%BE%E5%A4%87/</id>
         <title>linux如何使用U盘等外接储存设备</title>
-        <link rel="alternate" href="http://example.com/2021/05/08/linux%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8U%E7%9B%98%E7%AD%89%E5%A4%96%E6%8E%A5%E5%82%A8%E5%AD%98%E8%AE%BE%E5%A4%87/"/>
+        <link rel="alternate" href="https://blog.wuhen.one/2021/05/08/linux%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8U%E7%9B%98%E7%AD%89%E5%A4%96%E6%8E%A5%E5%82%A8%E5%AD%98%E8%AE%BE%E5%A4%87/"/>
         <content type="html">&lt;h2 id=&#34;linux如何使用u盘等外接储存设备&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux如何使用u盘等外接储存设备&#34;&gt;#&lt;/a&gt; linux 如何使用 U 盘等外接储存设备&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;1. 插入 U 盘&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. 查看&lt;/strong&gt;&lt;/p&gt;
@@ -150,9 +150,9 @@
         <updated>2021-05-07T19:50:11.588Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/05/08/ubuntu20%E9%85%8D%E7%BD%AEip/</id>
+        <id>https://blog.wuhen.one/2021/05/08/ubuntu20%E9%85%8D%E7%BD%AEip/</id>
         <title>ubuntu20配置ip</title>
-        <link rel="alternate" href="http://example.com/2021/05/08/ubuntu20%E9%85%8D%E7%BD%AEip/"/>
+        <link rel="alternate" href="https://blog.wuhen.one/2021/05/08/ubuntu20%E9%85%8D%E7%BD%AEip/"/>
         <content type="html">&lt;h2 id=&#34;ubuntu20配置ip&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ubuntu20配置ip&#34;&gt;#&lt;/a&gt; ubuntu20 配置 ip&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -185,9 +185,9 @@
         <updated>2021-05-07T19:50:11.588Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/05/08/ubuntu%E5%BF%98%E8%AE%B0%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%8E%E5%AF%86%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+        <id>https://blog.wuhen.one/2021/05/08/ubuntu%E5%BF%98%E8%AE%B0%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%8E%E5%AF%86%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
         <title>ubuntu忘记用户名与密码解决方案</title>
-        <link rel="alternate" href="http://example.com/2021/05/08/ubuntu%E5%BF%98%E8%AE%B0%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%8E%E5%AF%86%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+        <link rel="alternate" href="https://blog.wuhen.one/2021/05/08/ubuntu%E5%BF%98%E8%AE%B0%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%8E%E5%AF%86%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
         <content type="html">&lt;h2 id=&#34;ubuntu忘记用户名与密码解决方案&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ubuntu忘记用户名与密码解决方案&#34;&gt;#&lt;/a&gt; ubuntu 忘记用户名与密码解决方案&lt;/h2&gt;
 &lt;p&gt;很多朋友经常忘记自己的用户名以及密码。为啥哩，因为他们装好了系统后就没用过，放在电脑里吃灰，等到要用的时候，发现记不得用户名及密码了。哎呀，不小心说漏了，sorry，sorry。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. 环境&lt;/strong&gt;&lt;/p&gt;
@@ -230,9 +230,9 @@
         <updated>2021-05-07T19:50:11.588Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/05/08/ubuntu16.04%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</id>
+        <id>https://blog.wuhen.one/2021/05/08/ubuntu16.04%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</id>
         <title>ubuntu16.04安装步骤</title>
-        <link rel="alternate" href="http://example.com/2021/05/08/ubuntu16.04%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+        <link rel="alternate" href="https://blog.wuhen.one/2021/05/08/ubuntu16.04%20%E4%BF%9D%E5%A7%86%E7%BA%A7%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
         <content type="html">&lt;h2 id=&#34;ubuntu1604安装步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ubuntu1604安装步骤&#34;&gt;#&lt;/a&gt; &lt;strong&gt;ubuntu16.04 安装步骤&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;过几天要写一个搭建博客的教程，所以准备工作还是要先搞一下。windows 与 linux 的教程应该都会出，但为了更好的性能与稳定度，我还是强烈建议用 linux 环境搭建博客。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. 实验环境&lt;/strong&gt;&lt;/p&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>wuhen&#39;s blog • Posts by &#34;c#&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://blog.wuhen.one</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
@@ -19,9 +19,9 @@
         <category>博客搭建</category>
         <category>git</category>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/C#%E8%AF%BB%E5%86%99json%E6%96%87%E4%BB%B6%E2%80%94%E2%80%94Newtonsoft/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/C#%E8%AF%BB%E5%86%99json%E6%96%87%E4%BB%B6%E2%80%94%E2%80%94Newtonsoft/</guid>
             <title>C# 读写json文件</title>
-            <link>http://example.com/2021/05/08/C#%E8%AF%BB%E5%86%99json%E6%96%87%E4%BB%B6%E2%80%94%E2%80%94Newtonsoft/</link>
+            <link>https://blog.wuhen.one/2021/05/08/C#%E8%AF%BB%E5%86%99json%E6%96%87%E4%BB%B6%E2%80%94%E2%80%94Newtonsoft/</link>
             <category>C#</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;c-读写json文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c-读写json文件&#34;&gt;#&lt;/a&gt; C# 读写 json 文件&lt;/h2&gt;

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://blog.wuhen.one</id>
     <title>wuhen&#39;s blog • Posts by &#34;php&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://blog.wuhen.one" />
     <updated>2021-05-07T19:50:11.588Z</updated>
     <category term="计算机网络" />
     <category term="C#" />
@@ -16,9 +16,9 @@
     <category term="博客搭建" />
     <category term="git" />
     <entry>
-        <id>http://example.com/2021/05/08/VS%20Code%20%E7%94%A8php%20%E8%BF%9E%E6%8E%A5sql%20server%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+        <id>https://blog.wuhen.one/2021/05/08/VS%20Code%20%E7%94%A8php%20%E8%BF%9E%E6%8E%A5sql%20server%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
         <title>php 连接sql server数据库</title>
-        <link rel="alternate" href="http://example.com/2021/05/08/VS%20Code%20%E7%94%A8php%20%E8%BF%9E%E6%8E%A5sql%20server%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+        <link rel="alternate" href="https://blog.wuhen.one/2021/05/08/VS%20Code%20%E7%94%A8php%20%E8%BF%9E%E6%8E%A5sql%20server%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
         <content type="html">&lt;h2 id=&#34;php-连接sql-server数据库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#php-连接sql-server数据库&#34;&gt;#&lt;/a&gt; php 连接 sql server 数据库&lt;/h2&gt;
 &lt;p&gt;折腾了一天，终于把该死的数据库连起了，现在我就将我遇到的问题与配置的一些过程记录一下，希望有所帮助。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. 环境&lt;/strong&gt;&lt;/p&gt;
@@ -78,9 +78,9 @@ nts&amp;gt;&amp;gt; 线程不安全&lt;/p&gt;
         <updated>2021-05-07T19:50:11.588Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/05/08/VS%20code%20php%20%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95/</id>
+        <id>https://blog.wuhen.one/2021/05/08/VS%20code%20php%20%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95/</id>
         <title>VS code php 如何调试</title>
-        <link rel="alternate" href="http://example.com/2021/05/08/VS%20code%20php%20%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95/"/>
+        <link rel="alternate" href="https://blog.wuhen.one/2021/05/08/VS%20code%20php%20%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95/"/>
         <content type="html">&lt;h2 id=&#34;vs-code-php-如何调试&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vs-code-php-如何调试&#34;&gt;#&lt;/a&gt; VS code php 如何调试&lt;/h2&gt;
 &lt;p&gt;今天来写一篇如何调试 ” 拍黄片 “ 的 blog。&lt;br&gt;
 废话不说了，直接干。&lt;/p&gt;
@@ -130,9 +130,9 @@ nts&amp;gt;&amp;gt; 线程不安全&lt;/p&gt;
         <updated>2021-05-07T19:50:11.588Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/05/08/php%20xdebug%E8%B6%85%E6%97%B6%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</id>
+        <id>https://blog.wuhen.one/2021/05/08/php%20xdebug%E8%B6%85%E6%97%B6%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</id>
         <title>php xdebug超时问题解决</title>
-        <link rel="alternate" href="http://example.com/2021/05/08/php%20xdebug%E8%B6%85%E6%97%B6%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+        <link rel="alternate" href="https://blog.wuhen.one/2021/05/08/php%20xdebug%E8%B6%85%E6%97%B6%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
         <content type="html">&lt;p&gt;&lt;strong&gt;实验环境&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;1.VS code&lt;/p&gt;

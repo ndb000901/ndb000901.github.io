@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>wuhen&#39;s blog • Posts by &#34;计算机网络&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://blog.wuhen.one</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
@@ -19,9 +19,9 @@
         <category>博客搭建</category>
         <category>git</category>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/Burp%20suite%20%E5%88%86%E6%9E%90%20HTTP%E5%8D%8F%E8%AE%AE/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/Burp%20suite%20%E5%88%86%E6%9E%90%20HTTP%E5%8D%8F%E8%AE%AE/</guid>
             <title>Burp suite 分析 HTTP协议</title>
-            <link>http://example.com/2021/05/08/Burp%20suite%20%E5%88%86%E6%9E%90%20HTTP%E5%8D%8F%E8%AE%AE/</link>
+            <link>https://blog.wuhen.one/2021/05/08/Burp%20suite%20%E5%88%86%E6%9E%90%20HTTP%E5%8D%8F%E8%AE%AE/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;burp-suite-分析-http协议&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#burp-suite-分析-http协议&#34;&gt;#&lt;/a&gt; Burp suite 分析 HTTP 协议&lt;/h2&gt;
@@ -98,9 +98,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/ensp%E4%BB%BF%E7%9C%9F/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/ensp%E4%BB%BF%E7%9C%9F/</guid>
             <title>ensp仿真</title>
-            <link>http://example.com/2021/05/08/ensp%E4%BB%BF%E7%9C%9F/</link>
+            <link>https://blog.wuhen.one/2021/05/08/ensp%E4%BB%BF%E7%9C%9F/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;ensp仿真&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ensp仿真&#34;&gt;#&lt;/a&gt; ensp 仿真&lt;/h2&gt;
@@ -213,9 +213,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/win10%20%E5%88%9D%E8%AF%95ping/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/win10%20%E5%88%9D%E8%AF%95ping/</guid>
             <title>win10 初试ping</title>
-            <link>http://example.com/2021/05/08/win10%20%E5%88%9D%E8%AF%95ping/</link>
+            <link>https://blog.wuhen.one/2021/05/08/win10%20%E5%88%9D%E8%AF%95ping/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;win10-初试ping&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#win10-初试ping&#34;&gt;#&lt;/a&gt; win10 初试 ping&lt;/h2&gt;
@@ -245,9 +245,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/win10%20%E5%88%9D%E8%AF%95tracert/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/win10%20%E5%88%9D%E8%AF%95tracert/</guid>
             <title>win10 初试tracert</title>
-            <link>http://example.com/2021/05/08/win10%20%E5%88%9D%E8%AF%95tracert/</link>
+            <link>https://blog.wuhen.one/2021/05/08/win10%20%E5%88%9D%E8%AF%95tracert/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;win10-初试tracert&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#win10-初试tracert&#34;&gt;#&lt;/a&gt; win10 初试 tracert&lt;/h2&gt;
@@ -289,9 +289,9 @@ Traceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/wireshark%20%E5%88%86%E6%9E%90TCP%E5%8D%8F%E8%AE%AE/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/wireshark%20%E5%88%86%E6%9E%90TCP%E5%8D%8F%E8%AE%AE/</guid>
             <title>wireshark 分析tcp协议</title>
-            <link>http://example.com/2021/05/08/wireshark%20%E5%88%86%E6%9E%90TCP%E5%8D%8F%E8%AE%AE/</link>
+            <link>https://blog.wuhen.one/2021/05/08/wireshark%20%E5%88%86%E6%9E%90TCP%E5%8D%8F%E8%AE%AE/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;wireshark-分析tcp协议&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#wireshark-分析tcp协议&#34;&gt;#&lt;/a&gt; wireshark 分析 tcp 协议&lt;/h2&gt;
@@ -373,9 +373,9 @@ Traceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/wireshark%E5%88%86%E6%9E%90UDP%E5%8D%8F%E8%AE%AE/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/wireshark%E5%88%86%E6%9E%90UDP%E5%8D%8F%E8%AE%AE/</guid>
             <title>wireshark分析UDP协议</title>
-            <link>http://example.com/2021/05/08/wireshark%E5%88%86%E6%9E%90UDP%E5%8D%8F%E8%AE%AE/</link>
+            <link>https://blog.wuhen.one/2021/05/08/wireshark%E5%88%86%E6%9E%90UDP%E5%8D%8F%E8%AE%AE/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;wireshark分析udp协议&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#wireshark分析udp协议&#34;&gt;#&lt;/a&gt; wireshark 分析 UDP 协议&lt;/h2&gt;
@@ -426,9 +426,9 @@ Traceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer--1%E2%80%94%E2%80%94%E9%9B%86%E7%BA%BF%E5%99%A8/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer--1%E2%80%94%E2%80%94%E9%9B%86%E7%BA%BF%E5%99%A8/</guid>
             <title>初试Cisco Packet Tracer--1——集线器</title>
-            <link>http://example.com/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer--1%E2%80%94%E2%80%94%E9%9B%86%E7%BA%BF%E5%99%A8/</link>
+            <link>https://blog.wuhen.one/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer--1%E2%80%94%E2%80%94%E9%9B%86%E7%BA%BF%E5%99%A8/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;初试cisco-packet-tracer1集线器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初试cisco-packet-tracer1集线器&#34;&gt;#&lt;/a&gt; 初试 Cisco Packet Tracer–1—— 集线器&lt;/h2&gt;
@@ -479,9 +479,9 @@ Traceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%932%E2%80%94%E2%80%94%E4%BA%A4%E6%8D%A2%E6%9C%BA/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%932%E2%80%94%E2%80%94%E4%BA%A4%E6%8D%A2%E6%9C%BA/</guid>
             <title>初试Cisco Packet Tracer–2——交换机</title>
-            <link>http://example.com/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%932%E2%80%94%E2%80%94%E4%BA%A4%E6%8D%A2%E6%9C%BA/</link>
+            <link>https://blog.wuhen.one/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%932%E2%80%94%E2%80%94%E4%BA%A4%E6%8D%A2%E6%9C%BA/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;初试cisco-packet-tracer2交换机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初试cisco-packet-tracer2交换机&#34;&gt;#&lt;/a&gt; 初试 Cisco Packet Tracer–2—— 交换机&lt;/h2&gt;
@@ -518,9 +518,9 @@ Traceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%933%E2%80%94%E2%80%94%E8%AE%BF%E9%97%AEWeb%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%933%E2%80%94%E2%80%94%E8%AE%BF%E9%97%AEWeb%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
             <title>初试Cisco Packet Tracer–3——访问Web服务器</title>
-            <link>http://example.com/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%933%E2%80%94%E2%80%94%E8%AE%BF%E9%97%AEWeb%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+            <link>https://blog.wuhen.one/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%933%E2%80%94%E2%80%94%E8%AE%BF%E9%97%AEWeb%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;初试cisco-packet-tracer3访问web服务器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初试cisco-packet-tracer3访问web服务器&#34;&gt;#&lt;/a&gt; 初试 Cisco Packet Tracer–3—— 访问 Web 服务器&lt;/h2&gt;
@@ -555,9 +555,9 @@ Traceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%934%E2%80%94%E2%80%94%E9%83%A8%E7%BD%B2DHCP%E3%80%81DNS%E3%80%81Web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%934%E2%80%94%E2%80%94%E9%83%A8%E7%BD%B2DHCP%E3%80%81DNS%E3%80%81Web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
             <title>初试Cisco Packet Tracer–4——部署DHCP、DNS、Web服务器</title>
-            <link>http://example.com/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%934%E2%80%94%E2%80%94%E9%83%A8%E7%BD%B2DHCP%E3%80%81DNS%E3%80%81Web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+            <link>https://blog.wuhen.one/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%934%E2%80%94%E2%80%94%E9%83%A8%E7%BD%B2DHCP%E3%80%81DNS%E3%80%81Web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;初试cisco-packet-tracer4部署dhcp-dns-web服务器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初试cisco-packet-tracer4部署dhcp-dns-web服务器&#34;&gt;#&lt;/a&gt; 初试 Cisco Packet Tracer–4—— 部署 DHCP、DNS、Web 服务器&lt;/h2&gt;
@@ -611,9 +611,9 @@ Traceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%935%E2%80%94%E2%80%94%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E4%B8%A4%E4%B8%AA%E5%AD%90%E7%BD%91/</guid>
+            <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%935%E2%80%94%E2%80%94%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E4%B8%A4%E4%B8%AA%E5%AD%90%E7%BD%91/</guid>
             <title>初试Cisco Packet Tracer–5——路由器连接两个子网</title>
-            <link>http://example.com/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%935%E2%80%94%E2%80%94%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E4%B8%A4%E4%B8%AA%E5%AD%90%E7%BD%91/</link>
+            <link>https://blog.wuhen.one/2021/05/08/%E5%88%9D%E8%AF%95Cisco%20Packet%20Tracer%E2%80%935%E2%80%94%E2%80%94%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E4%B8%A4%E4%B8%AA%E5%AD%90%E7%BD%91/</link>
             <category>计算机网络</category>
             <pubDate>Sat, 08 May 2021 03:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;初试cisco-packet-tracer5路由器连接两个子网&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初试cisco-packet-tracer5路由器连接两个子网&#34;&gt;#&lt;/a&gt; 初试 Cisco Packet Tracer–5—— 路由器连接两个子网&lt;/h2&gt;
