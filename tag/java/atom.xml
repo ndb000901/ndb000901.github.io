@@ -15,6 +15,7 @@
     <category term="shell" />
     <category term="博客搭建" />
     <category term="git" />
+    <category term="web" />
     <entry>
         <id>https://blog.wuhen.one/2021/05/08/java%E5%A4%84%E7%90%86json%E6%96%87%E4%BB%B6%E2%80%94%E2%80%94gson/</id>
         <title>java处理json文件——gson</title>

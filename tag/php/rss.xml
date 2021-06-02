@@ -18,6 +18,7 @@
         <category>shell</category>
         <category>博客搭建</category>
         <category>git</category>
+        <category>web</category>
         <item>
             <guid isPermalink="true">https://blog.wuhen.one/2021/05/08/VS%20Code%20%E7%94%A8php%20%E8%BF%9E%E6%8E%A5sql%20server%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
             <title>php 连接sql server数据库</title>

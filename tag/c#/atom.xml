@@ -15,6 +15,7 @@
     <category term="shell" />
     <category term="博客搭建" />
     <category term="git" />
+    <category term="web" />
     <entry>
         <id>https://blog.wuhen.one/2021/05/08/C#%E8%AF%BB%E5%86%99json%E6%96%87%E4%BB%B6%E2%80%94%E2%80%94Newtonsoft/</id>
         <title>C# 读写json文件</title>

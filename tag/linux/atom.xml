@@ -15,6 +15,7 @@
     <category term="shell" />
     <category term="博客搭建" />
     <category term="git" />
+    <category term="web" />
     <entry>
         <id>https://blog.wuhen.one/2021/05/08/Ubuntu%20Centos%E9%9D%99%E6%80%81ip%E8%AE%BE%E7%BD%AE/</id>
         <title>Ubuntu Centos静态ip设置</title>

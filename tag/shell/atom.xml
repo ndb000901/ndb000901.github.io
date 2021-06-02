@@ -15,6 +15,7 @@
     <category term="shell" />
     <category term="博客搭建" />
     <category term="git" />
+    <category term="web" />
     <entry>
         <id>https://blog.wuhen.one/2021/05/08/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/</id>
         <title>shell脚本编写</title>
